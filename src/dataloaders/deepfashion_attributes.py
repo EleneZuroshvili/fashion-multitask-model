@@ -10,15 +10,15 @@ class DeepFashionAttributes(Dataset):
         self.split = split
         self.transform = transform
 
-        # Load image names
+        
         with open(os.path.join(anno_dir, split, f"{split}.txt")) as f:
             self.image_names = [line.strip() for line in f]
 
-        # Load category labels
+        
         with open(os.path.join(anno_dir, split, f"{split}_cate.txt")) as f:
             self.category_labels = [int(line.strip()) - 1 for line in f]  # zero-indexed
 
-        # Load attribute labels
+        
         with open(os.path.join(anno_dir, split, f"{split}_attr.txt")) as f:
             self.attr_labels = [list(map(int, line.strip().split())) for line in f]
 
@@ -26,7 +26,7 @@ class DeepFashionAttributes(Dataset):
         return len(self.image_names)
 
     def __getitem__(self, idx):
-        img_path = os.path.join(self.img_dir, self.image_names[idx])
+        img_path = os.path.join(self.img_dir, self.image_names[idx].replace("img/", ""))
         image = Image.open(img_path).convert('RGB')
 
         if self.transform:
