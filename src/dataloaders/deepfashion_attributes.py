@@ -35,4 +35,4 @@ class DeepFashionAttributes(Dataset):
         category = torch.tensor(self.category_labels[idx], dtype=torch.long)
         attributes = torch.tensor(self.attr_labels[idx], dtype=torch.float)
 
-        return image, category, attributes
+        return image, category, attributes, self.image_names[idx]

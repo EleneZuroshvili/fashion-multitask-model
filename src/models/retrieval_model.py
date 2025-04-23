@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
+import torch.nn.functional as F
 
 class RetrievalModel(nn.Module):
     def __init__(self, embedding_dim=256):
@@ -22,4 +23,5 @@ class RetrievalModel(nn.Module):
     def forward(self, x):
         x = self.backbone(x)
         x = self.embedding(x)
+        x = F.normalize(x, p=2, dim=1)  # L2 normalize embeddings
         return x
