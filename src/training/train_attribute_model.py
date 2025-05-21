@@ -111,7 +111,7 @@ for epoch in range(num_epochs):
     model.train()
     total_loss = 0
 
-    for images, categories, attributes in train_loader:
+    for images, categories, attributes, _ in train_loader:
         images = images.to(device)
         categories = categories.to(device)
         attributes = attributes.to(device)
