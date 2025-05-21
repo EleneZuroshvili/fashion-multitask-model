@@ -6,7 +6,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
-from models.retrieval_model import RetrievalModel
+from src.models.image_retrieval import RetrievalModel
 from dataloaders.deepfashion_retrievals import DeepFashionRetrieval
 from utils.triplet_sampling import get_triplet_batch, build_item_index
 
