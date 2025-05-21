@@ -173,5 +173,16 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 *.zip
-data/
 **/.DS_Store
+
+# PyTorch & generic model checkpoints
+*.pth
+*.pt
+checkpoints/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
