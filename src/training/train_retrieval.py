@@ -11,8 +11,8 @@ from torchvision import transforms
 from pytorch_metric_learning import miners, losses as pml_losses
 from pytorch_metric_learning.samplers import MPerClassSampler
 
-from fashion_multitask_model.data.dataset import DeepFashionRetrieval
-from fashion_multitask_model.models.image_retrieval import RetrievalModel
+from data.dataset import DeepFashionRetrieval
+from models.image_retrieval import RetrievalModel
 
 def parse_args():
     import argparse

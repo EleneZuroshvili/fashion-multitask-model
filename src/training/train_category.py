@@ -9,8 +9,8 @@ from torchvision import transforms
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
 
-from fashion_multitask_model.data.dataset import DeepFashionCategories
-from fashion_multitask_model.models.category_classification import ClassificationModel
+from data.dataset import DeepFashionCategories
+from models.category_classification import ClassificationModel
 
 def main():
     # — your CLI parsing here —

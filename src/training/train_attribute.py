@@ -9,8 +9,8 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from sklearn.metrics import f1_score
 
-from fashion_multitask_model.data.dataset import DeepFashionAttributes
-from fashion_multitask_model.models.attribute_prediction import AttributeModel
+from data.dataset import DeepFashionAttributes
+from models.attribute_prediction import AttributeModel
 
 def parse_args():
     import argparse

@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# File: src/fashion_multitask_model/training/train_multitask.py
-
 import os
 import random
 import numpy as np
@@ -13,8 +10,8 @@ from torchvision import transforms
 
 from sklearn.metrics import accuracy_score, f1_score
 
-from fashion_multitask_model.data.dataset import DeepFashionMulti
-from fashion_multitask_model.models.multitask_classification import MultiTaskModel
+from data.dataset import DeepFashionMulti
+from models.multitask_classification import MultiTaskModel
 
 def parse_args():
     import argparse

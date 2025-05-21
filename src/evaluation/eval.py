@@ -9,17 +9,17 @@ from sklearn.metrics import (
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
-from fashion_multitask_model.data.dataset import (
+from data.dataset import (
     DeepFashionCategories,
     DeepFashionAttributes,
     DeepFashionRetrieval,
     DeepFashionMulti
 )
-from fashion_multitask_model.models.category_classification import ClassificationModel
-from fashion_multitask_model.models.attribute_prediction      import AttributeModel
-from fashion_multitask_model.models.image_retrieval      import RetrievalModel
-from fashion_multitask_model.models.multitask_classification      import MultiTaskModel
-from fashion_multitask_model.models.multitask_final     import MultiModalModel
+from models.category_classification import ClassificationModel
+from models.attribute_prediction      import AttributeModel
+from models.image_retrieval      import RetrievalModel
+from models.multitask_classification      import MultiTaskModel
+from models.multitask_final     import MultiModalModel
 
 def get_transform(resize=224):
     return transforms.Compose([

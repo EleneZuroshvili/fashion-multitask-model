@@ -9,8 +9,8 @@ from torch.utils.data import DataLoader, WeightedRandomSampler
 from torchvision import transforms
 from pytorch_metric_learning import miners, losses as pml_losses
 
-from fashion_multitask_model.data.dataset import DeepFashionAttributes, DeepFashionRetrieval
-from fashion_multitask_model.models.multitask_final import MultiModalModel
+from data.dataset import DeepFashionAttributes, DeepFashionRetrieval
+from models.multitask_final import MultiModalModel
 
 def parse_args():
     import argparse
