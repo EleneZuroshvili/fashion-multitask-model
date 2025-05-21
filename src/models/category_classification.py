@@ -11,8 +11,14 @@ class ClassificationModel(nn.Module):
         feat_dim = backbone.fc.in_features
         self.classifier = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(feat_dim, 1024), nn.BatchNorm1d(1024), nn.ReLU(), nn.Dropout(dropout),
-            nn.Linear(1024, 512), nn.BatchNorm1d(512), nn.ReLU(), nn.Dropout(dropout),
+            nn.Linear(feat_dim, 1024), 
+            nn.BatchNorm1d(1024), 
+            nn.ReLU(), 
+            nn.Dropout(dropout),
+            nn.Linear(1024, 512), 
+            nn.BatchNorm1d(512), 
+            nn.ReLU(), 
+            nn.Dropout(dropout),
             nn.Linear(512, num_categories)
         )
 
