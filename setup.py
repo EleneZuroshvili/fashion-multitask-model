@@ -19,12 +19,12 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "train-classification = training.train_classification:main",
+            "train-classification = training.train_category:main",
             "train-attribute      = training.train_attribute:main",
             "train-retrieval      = training.train_retrieval:main",
-            "train-multitask      = training.train_multitask:main",
-            "train-multimodal     = training.train_multimodal:main",
-            "eval-fashion         = evaluate.eval:main"
+            "train-multitask      = training.train_multi_classification:main",
+            "train-multimodal     = training.train_multitask_final:main",
+            "eval-fashion         = evaluation.eval:main",
         ]
     },
 )
