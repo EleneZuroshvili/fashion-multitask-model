@@ -177,7 +177,9 @@ python evaluation/eval.py \
   --anno-dir path/to/annotations \
   --checkpoint path/to/best_model.pth
 
-### 5. setup.py: 
+### 5. src/tests - test suite for checking if everything works using dummy variables
+
+### 6. setup.py: 
 Defines the project as a pip-installable package for easier integration and CLI access. You can install the package locally with:
 
 bash: pip install -e .
@@ -198,14 +200,44 @@ After installation, the following CLI commands become available:
 
 These entry points map directly to the respective training and evaluation scripts in the training/ and evaluation/ folders.
 
-### 6.requirements.txt:
+### 7.requirements.txt:
 A full list of pinned dependencies for exact reproducibility. Install using:
 bash
 pip install -r requirements.txt
 
 ---
+## Test Suite
 
+This project includes a test suite to ensure the integrity of models, datasets, training, and evaluation logic.
 
+### What’s Tested
+
+| File                             | Description                                           |
+|----------------------------------|-------------------------------------------------------|
+| `test_models.py`                 | Tests that `AttributeModel` outputs the correct shape |
+| `test_datasets.py`              | Verifies dataset loads image and label correctly      |
+| `test_training_step.py`         | Runs one forward + backward pass with dummy data      |
+| `test_multitask_model.py`       | Checks multitask model outputs both category and attributes correctly |
+| `test_eval_script.py`           | Validates CLI argument parsing & runs `eval.py` end-to-end with dummy model & data |
+
+### How to Run Locally
+
+From the project root:
+
+```bash
+PYTHONPATH=./src pytest
+```
+What’s Included in the Tests:
+
+Dummy image (test1.jpg) in src/tests/fake_data/img/
+
+Dummy annotation files in src/tests/fake_data/annotations/
+
+Dummy untrained model checkpoint in src/tests/fake_checkpoints/
+
+These enable end-to-end evaluation of the classification task without needing full DeepFashion data.
+
+---
 ## Getting Started: Step-by-Step Instructions
 
 ---
