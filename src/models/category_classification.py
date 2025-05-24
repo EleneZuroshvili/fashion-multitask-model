@@ -24,4 +24,4 @@ class ClassificationModel(nn.Module):
 
     def forward(self, x):
         x = self.features(x)
-        return self.classifier(x).squeeze()
+        return self.classifier(x)
